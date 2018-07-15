@@ -259,7 +259,7 @@ switch (fruitFromJs(100)) {
 
 ### More Safety
 
-Similar to the JS object <-> record deriving, you can hide the fact that the JS enum are ints by using `newType`:
+Similar to the JS object <-> record deriving, you can hide the fact that the JS enum are ints by passing the `newType` option to the `jsConverter` plugin:
 
 ```ocaml
 type fruit =
@@ -277,7 +277,7 @@ type fruit =
   | Watermelon;
 ```
 
-Generates 2 functions of the following types:
+This option causes `jsConverter` to generate functions of the following types:
 
 ```ocaml
 val fruitToJs : fruit -> abs_fruit
